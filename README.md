@@ -3,66 +3,66 @@
 #### Support (more version need your feedback):
 DbVisualizer 11.0.5, 20200924 update
 
-## 使用说明
+## Instructions for use
 
-### 优势
-* 提供基于java的命令行 keygen，更方便在终端环境使用。
-* 开源项目，你知道破解时都做了什么。
+### Advantage
+* Provide java-based command line keygen, which is more convenient to use in the terminal environment.
+* Open source project, you know what you did when you cracked it.
 
-### 直接下载
-* 直接下载本项目[release](https://github.com/xiaguliuxiang/dbvisualizer-agent/releases)包。
+### Download
+* Directly download the [release](https://github.com/xiaguliuxiang/dbvisualizer-agent/releases) package of this project.
 
-### 自行编译
-* Clone本项目源码，pom.xml同级目录执行`mvn clean package`后即可进行编译。
-* 使用`target`目录产出的`dbvisualizer-agent-1.0.3-jar-with-dependencies.jar`，而非`dbvisualizer-agent-1.0.3.jar`！
-* *如果你不知道我在说什么，最好还是直接下载我编译好的包。*
+### Compile by yourself
+* Clone the source code of this project, the pom.xml directory at the same level can be compiled after executing `mvn clean package`.
+* Use `dbvisualizer-agent-1.0.3-jar-with-dependencies.jar` produced in the `target` directory instead of `dbvisualizer-agent-1.0.3.jar`!
+* *If you don’t know what I’m talking about, it’s best to download my compiled package directly. *
 
-### 使用帮助
-* 如果你已经获得`dbvisualizer-agent.jar`，可以试着执行`java -jar dbvisualizer-agent.jar -h`看看输出的帮助。
-* 默认的`License id`已经进入软件服务商的黑名单，建议使用自定义的`License id`，具体参考上一步的帮助输出。
+### Using help
+* If you have already obtained `dbvisualizer-agent.jar`, you can try to execute `java -jar dbvisualizer-agent.jar -h` to see the help output.
+* The default `License id` has entered the blacklist of the software service provider. It is recommended to use a custom `License id`, refer to the help output in the previous step for details.
 
-### 配置Agent
-1. 将`dbvisualizer-agent.jar`放在一个你不会随便删除的位置。
-2. 设置环境变量`VM options`（这其实是Java的环境变量，用来指定其启动java程序时附带的参数），把`-javaagent`参数附带上。具体可以这么做：
-   * 你可以把：`-javaagent:/path/dbvisualizer-agent.jar`这样的命令直接放到`dbvis.vmoptions`这样的文件内。
-   *   Windows: -javaagent:C:\Users\xiaguliuxiang\dbvisualizer-agent.jar
-   *      dbvis.vmoptions: ${DbVisualizer_HOME}/dbvis.vmoptions
-   *   Mac OS: -javaagent:/Users/xiaguliuxiang/dbvisualizer-agent.jar
-   *      dbvis.vmoptions: ${DbVisualizer_HOME}/Contents/vmoptions.txt
-   *   Linux: -javaagent:/home/xiaguliuxiang/dbvisualizer-agent.jar
-   *      dbvis.vmoptions: ${DbVisualizer_HOME}/dbvis.vmoptions
-   * 或者你所知的其他修改环境变量的方法。
-   * 总之你想办法把`-javaagent`参数附带到要启动的java进程上。
-3. 配置完成请重启你的`DbVisualizer`客户端。
-4. 如果你想验证是否配置成功，可以这么做：
-   * 执行类似命令：`ps aux|grep java` 找到对应的进程看看`-javaagent`参数是否正确附上。
-   * 在`Linux`用户目录类似：`${HOME}/.dbvis/logs`软件运行日志内应该能找到：`-javaagent:/path/dbvisualizer-agent.jar`的输出字样。
-   * 在`Windows`用户目录类似：`%USERPROFILE%/.dbvis/logs`软件运行日志内应该能找到：`-javaagent:/path/dbvisualizer-agent.jar`的输出字样。
+### Configure Agent
+1. Put `dbvisualizer-agent.jar` in a location where you will not delete it casually.
+2. Set the environment variable `VM options` (this is actually the environment variable of Java, used to specify the parameters attached when starting the java program), and attach the `-javaagent` parameter. Specifically, you can do this:
+   * You can put commands like `-javaagent:/path/dbvisualizer-agent.jar` directly into a file like `dbvis.vmoptions`.
+   * Windows: -javaagent:C:\Users\xiaguliuxiang\dbvisualizer-agent.jar
+   * dbvis.vmoptions: ${DbVisualizer_HOME}/dbvis.vmoptions
+   * Mac OS: -javaagent:/Users/xiaguliuxiang/dbvisualizer-agent.jar
+   * dbvis.vmoptions: ${DbVisualizer_HOME}/Contents/vmoptions.txt
+   * Linux: -javaagent:/home/xiaguliuxiang/dbvisualizer-agent.jar
+   * dbvis.vmoptions: ${DbVisualizer_HOME}/dbvis.vmoptions
+   * Or other methods you know to modify environment variables.
+   * In short, you find a way to attach the `-javaagent` parameter to the java process to be started.
+3. Please restart your `DbVisualizer` client after the configuration is complete.
+4. If you want to verify whether the configuration is successful, you can do this:
+   * Execute a similar command: `ps aux|grep java` Find the corresponding process to see if the `-javaagent` parameter is correctly attached.
+   * Similar to the `Linux` user directory: `${HOME}/.dbvis/logs` software running log should be able to find: `-javaagent:/path/dbvisualizer-agent.jar` output.
+   * Similar to the `Windows` user directory: `%USERPROFILE%/.dbvis/logs` software running log should be able to find: `-javaagent:/path/dbvisualizer-agent.jar` output words.
 
-### 使用KeyGen
-* 你得确认已经配置好agent，参考上面说明。
-* 当你试着执行`java -jar dbvisualizer-agent.jar -h`时应该可以看到输出的KeyGen参数帮助。
-* 请仔细看看每个参数的作用，建议使用自定义的`License id`。
-* 提供了正确的参数运行KeyGen会在终端输出计算好的激活码。
-* 将生成的激活码复制出来去激活你的DbVisualizer。
-* 举个栗子：`java -jar dbvisualizer-agent.jar -i xiaguliuxiang -n xiaguliuxiang -o https://github.com/xiaguliuxiang/dbvisualizer-agent`
+### Use KeyGen
+* You have to confirm that the agent has been configured, refer to the above instructions.
+* When you try to execute `java -jar dbvisualizer-agent.jar -h`, you should see the output of KeyGen parameter help.
+* Please take a closer look at the function of each parameter, it is recommended to use a custom `License id`.
+* After providing the correct parameters, running KeyGen will output the calculated activation code on the terminal.
+* Copy the generated activation code to activate your DbVisualizer.
+* Give a chestnut: `java -jar dbvisualizer-agent.jar -i xiaguliuxiang -n xiaguliuxiang -o https://github.com/xiaguliuxiang/dbvisualizer-agent`
 
-### 申明
-* 本项目只做个人学习研究之用，不得用于商业用途！
-* 商业使用请向 [DbVisualizer](https://www.dbvis.com) 购买正版，谢谢合作！
-* 本项目使用`GNU General Public License v3.0`开源许可！
-* 不允许说我代码写的糟糕。
-* 此工具并不太适合我的应用场景早已卸载，这里也就懒得更新了，商业使用的记得支持正版哦！
+### Statement
+* This project is only for personal study and research purposes, not for commercial purposes!
+* For commercial use, please purchase the genuine version from [DbVisualizer](https://www.dbvis.com), thank you for your cooperation!
+* This project uses the `GNU General Public License v3.0` open source license!
+* It is not allowed to say that my code is badly written.
+* This tool is not very suitable for my application scenario. I have already uninstalled it, so I don’t bother to update it here. For commercial use, remember to support genuine!
 
-### 交流
-* 给本项目发issue。
-* 欢迎你来一起完善这个项目，请发PR。
-* 你可以加入QQ群：`532944625` 和我实时交流。
-* 访问网站：[https://github.com/xiaguliuxiang/dbvisualizer-agent](https://github.com/xiaguliuxiang/dbvisualizer-agent) 给我留言。
+### communicate with
+* Issue an issue to this project.
+* You are welcome to improve this project together, please send a PR.
+* You can join the QQ group: `532944625` and chat with me in real time.
+* Visit the website: [https://github.com/xiaguliuxiang/dbvisualizer-agent](https://github.com/xiaguliuxiang/dbvisualizer-agent) Leave me a message.
 
-### 热心网友教程（感谢原作者，侵删！）
+### Enthusiastic netizens tutorial (thanks to the original author, invaded and deleted!)
 * [Google](https://www.google.com)
 
-### 关于
-* [侠骨留香](https://github.com/xiaguliuxiang)
-* 2019年09月09日
+### About
+* [Xiaguliuxiang](https://github.com/xiaguliuxiang)
+* September 9, 2019
